@@ -1,0 +1,44 @@
+.header {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+}
+
+.game-modes, 
+.elements-types-list {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0px;
+}
+
+.game-modes__button,
+.element-types {
+    flex: 0 1 50%;
+    list-style: none;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+}
+
+.element-types {
+    font-size: 20px;
+}
+
+.game-modes__button.active,
+.element-types.active {
+    background-color: #000fff;
+}
+
+.new-game {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10px 0px;
+}

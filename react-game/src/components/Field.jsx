@@ -7,12 +7,16 @@ class Field extends Component {
         player: 'user',
         field: [[], [], []],
         result: '',
+        element: '',
         gameover: false,
     }
 
-    handleClick = (rowIndex, columnIndex) => {
-        const { player, field, gameover } = this.state;
+    handleClick = (e, rowIndex, columnIndex) => {
+        const { player, field, element, gameover } = this.state;
+        console.log(e.target);
+        e.target.innerText = `${element}`;
         let currentPlayer = player;
+        let currentElement = element;
         const newField = field.slice();
 
         if (!gameover) {    
@@ -24,32 +28,45 @@ class Field extends Component {
                 } else {
                     currentPlayer = 'user'
                 }
+
+                if (currentElement === 'X') {
+                    currentElement = 'O';
+                } else {
+                    currentElement = 'X'
+                }
+
+                if (currentElement === '') {
+                    currentElement = 'X'
+                }
             }
 
             this.setState({
                 player: currentPlayer,
-                field: newField, 
-            })
-        } else {
-            this.setState( {
-                gameover: true,
+                field: newField,
+                element: currentElement,
             })
         }
     }
 
     render() {
         return (
-            <table className={this.state.gameover ? "end" : "noend"}>
-                <tbody>
-                    {[0, 1, 2].map(rowIndex => (
-                        <tr key={rowIndex}>
-                            {[0, 1, 2].map(columnIndex => (
-                                <Cell key={columnIndex} onClick={() => this.handleClick(rowIndex, columnIndex)} />
-                            ))}
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <main className="main">
+                <table className={this.state.gameover ? "end" : "noend"}>
+                    <tbody>
+                        {[0, 1, 2].map(rowIndex => (
+                            <tr key={rowIndex}>
+                                {[0, 1, 2].map(columnIndex => (
+                                    <Cell
+                                        key={`${rowIndex}${columnIndex}`}
+                                        onClick={(e) => this.handleClick(e, rowIndex, columnIndex)} 
+                                        value={this.state.element}
+                                    />
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </main>
         );
     }
 }
