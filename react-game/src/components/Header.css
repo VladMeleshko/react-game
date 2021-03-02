@@ -10,8 +10,17 @@
     text-align: center;
 }
 
-.game-modes, 
-.elements-types-list {
+.game-modes__title,
+.elements-types__title {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.game-modes__list, 
+.elements-types__list {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
