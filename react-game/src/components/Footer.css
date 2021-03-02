@@ -1,8 +1,33 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+    color: #fff;
+    background-color: #090974;
+}
+
+.footer>p,
+.school-logo {
+    margin: 0;
+    padding: 0 10px;
+}
+
+.footer>p>a {
+    font-style: italic;
+    font-weight: 700;
+}
+
 .author-link {
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 .autor {
     text-align: center;
+}
+
+.school-logo {
+    display: block;
+    width: 20%;
 }

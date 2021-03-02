@@ -51,6 +51,7 @@ class Field extends Component {
     render() {
         return (
             <main className="main">
+                <div className="game-info">Win</div>
                 <table className={this.state.gameover ? "end" : "noend"}>
                     <tbody>
                         {[0, 1, 2].map(rowIndex => (

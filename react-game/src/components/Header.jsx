@@ -5,7 +5,7 @@ class Header extends Component {
     render () {
         return (
             <header className="header">
-                <h1 className="title">TIC TOC GAME</h1>
+                <h1 className="title">TIC TAC TOE</h1>
                 <ul className="game-modes">
                     <li className="game-modes__button active">Player vs Computer</li>
                     <li className="game-modes__button">Player vs Player</li>

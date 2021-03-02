@@ -1,8 +1,12 @@
 .header {
     width: 100%;
+    background-color: #090974;
 }
 
 .title {
+    margin: 0;
+    padding: 10px 0;
+    color: #fff;
     text-align: center;
 }
 
@@ -21,9 +25,10 @@
 .game-modes__button,
 .element-types {
     flex: 0 1 50%;
+    border: 1px solid #1B1BB3;
     list-style: none;
     color: #fff;
-    background-color: #000;
+    background-color: #7373D9;
     text-align: center;
 }
 
@@ -31,9 +36,23 @@
     font-size: 20px;
 }
 
+.game-modes__button:hover,
+.element-types:hover {
+    background-color: #313186;
+    opacity: .5;
+    cursor: pointer;
+}
+
 .game-modes__button.active,
 .element-types.active {
-    background-color: #000fff;
+    background-color: #313186;
+}
+
+.game-modes__button.active:hover,
+.element-types.active:hover {
+    background-color: #313186;
+    opacity: 1;
+    cursor: default;
 }
 
 .new-game {
@@ -41,4 +60,10 @@
     left: 50%;
     transform: translateX(-50%);
     margin: 10px 0px;
+    border-radius: 50%;
+    width: 20%;
+    height: 50px;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
 }
