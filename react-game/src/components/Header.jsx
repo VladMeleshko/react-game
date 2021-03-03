@@ -31,7 +31,7 @@ class Header extends Component {
                         <li className="element-types" onClick={(e) => this.changeActiveParam(e, ".element-types", "active", "O")}>O</li>
                     </ul>
                 </div>
-                <button className="new-game">New game</button>
+                <button className="new-game" onClick={() => this.props.startNewGame(true)}>New game</button>
             </header>
         );
     }

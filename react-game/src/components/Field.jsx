@@ -21,6 +21,21 @@ class Field extends Component {
         gameover: false,
     }
 
+    componentDidUpdate(prevState) {
+        if (this.props.newGame !== prevState.newGame) {
+            this.setState({
+                player: 'Player 1',
+                field: [[], [], []],
+                result: '',
+                value: '',
+                gameover: false,
+            });
+            
+            this.render();
+            this.props.clearField();
+        }
+    }
+
     soundClick = () => {
         const audio = new Audio();
         audio.src = soundClick;
@@ -62,6 +77,8 @@ class Field extends Component {
                     if (audio) {
                         this.soundWin();
                     }
+
+                    break;
             }
         }
     }

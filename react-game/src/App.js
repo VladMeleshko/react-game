@@ -8,16 +8,20 @@ function App() {
 
   const [mode, setMode] = useState('PvP');
   const [value, setValue] = useState('X');
+  const [newGame, setNewGame] = useState(false);
 
   return (
     <div className="app">
       <Header 
         changeMode={(modeType) => setMode(modeType)}
         changeValue={(newValue) => setValue(newValue)}
+        startNewGame={(newGame) => setNewGame(newGame)}
       />
       <Field 
         mode={mode}
         value={value}
+        newGame={newGame}
+        clearField={(newGame => setNewGame(newGame))}
       />
       <Footer />
     </div>
