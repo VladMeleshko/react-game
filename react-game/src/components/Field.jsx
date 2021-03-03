@@ -3,6 +3,7 @@ import Cell from './Cell.jsx';
 import './Field.css';
 import soundClick from '../audio/click.mp3';
 import soundWin from '../audio/win.mp3'
+import soundTie from '../audio/tie.mp3'
 
 const Gameinfo = ({ player, value, firstValue, result }) => {
     if (!result) {
@@ -33,7 +34,6 @@ class Field extends Component {
                 gameover: false,
             });
             
-            this.render();
             this.props.clearField();
         }
     }
@@ -50,19 +50,11 @@ class Field extends Component {
         audio.autoplay = true;
     }
 
-    // computerPlay = (field) => {
-    //     const row = Math.floor(Math.random() * 10) % 2;
-    //     const column = Math.floor(Math.random() * 10) % 2;
-
-    //     if (field[row][column]) {
-    //         this.computerPlay(field);
-    //     } else {
-    //         return {
-    //             row,
-    //             column,
-    //         }
-    //     }
-    // }
+    soundTie = () => {
+        const audio = new Audio();
+        audio.src = soundTie;
+        audio.autoplay = true;
+    }
 
     gameOver = (field, audio, player) => {
         for (let i = 0; i < field.length; i++) {
@@ -79,8 +71,27 @@ class Field extends Component {
                     if (audio) {
                         this.soundWin();
                     }
+                    
+                    return;
+            }
+        }
 
-                    break;
+        let counter = 0;
+        
+        for (let i = 0; i < field.length; i++) {
+            for (let j = 0; j < field.length; j++) {
+                if (field[i][j] !== undefined) counter++;
+            }
+        }
+
+        if (counter === 9) {
+            this.setState({
+                result: `TIE`,
+                gameover: true,
+            })
+
+            if (audio) {
+                this.soundTie();
             }
         }
     }
@@ -96,8 +107,6 @@ class Field extends Component {
         } else {
             currentValue = value;
         }
-        
-        // const { row, column } = this.computerPlay(field);
         
         if (!gameover) {    
             if (!field[rowIndex][columnIndex]) {
@@ -141,7 +150,7 @@ class Field extends Component {
                         firstValue={this.props.value}
                     />
                 </div>
-                <table className={this.state.gameover ? "end" : "noend"}> {/* ?????? */}
+                <table>
                     <tbody>
                         {[0, 1, 2].map(rowIndex => (
                             <tr key={rowIndex}>
