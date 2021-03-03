@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     width: 100%;
     background-color: #090974;
 }
@@ -8,6 +9,18 @@
     padding: 10px 0;
     color: #fff;
     text-align: center;
+}
+
+.sound-switcher {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 10px;
+    background-color: #7373D9;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
 }
 
 .game-modes__title,

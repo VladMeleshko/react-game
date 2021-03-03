@@ -2,6 +2,24 @@ import React, { Component } from 'react';
 import './Header.css'
 
 class Header extends Component {
+    state = {
+        sound: true,
+    }
+
+    toggleSounds = () => {
+        if (this.state.sound) {
+            this.setState({
+                sound: false,
+            })
+        } else {
+            this.setState({
+                sound: true,
+            })
+        }
+
+        this.props.switchAudio(!this.state.sound);
+    }
+
     changeActiveParam = (e, elementsSelector, activeClass, param) => {
         const elemArr = document.querySelectorAll(elementsSelector);
         elemArr.forEach(elem => elem.classList.remove(activeClass));
@@ -17,6 +35,7 @@ class Header extends Component {
         return (
             <header className="header">
                 <h1 className="title">TIC TAC TOE</h1>
+                <button className="sound-switcher" onClick={this.toggleSounds}>Sound: {this.state.sound ? 'ON' : "OFF"}</button>
                 <div className="game-modes">
                     <h2 className="game-modes__title">Choose mode:</h2>
                     <ul className="game-modes__list">

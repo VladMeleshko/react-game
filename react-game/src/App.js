@@ -9,6 +9,7 @@ function App() {
   const [mode, setMode] = useState('PvP');
   const [value, setValue] = useState('X');
   const [newGame, setNewGame] = useState(false);
+  const [audio, setAudio] = useState(true);
 
   return (
     <div className="app">
@@ -16,11 +17,13 @@ function App() {
         changeMode={(modeType) => setMode(modeType)}
         changeValue={(newValue) => setValue(newValue)}
         startNewGame={(newGame) => setNewGame(newGame)}
+        switchAudio={(audioMode) => setAudio(audioMode)}
       />
       <Field 
         mode={mode}
         value={value}
         newGame={newGame}
+        audio={audio}
         clearField={(newGame => setNewGame(newGame))}
       />
       <Footer />

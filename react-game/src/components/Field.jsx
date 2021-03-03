@@ -22,7 +22,9 @@ class Field extends Component {
     }
 
     componentDidUpdate(prevState) {
-        if (this.props.newGame !== prevState.newGame) {
+        if (this.props.newGame !== prevState.newGame ||
+            this.props.value !== prevState.value ||
+            this.props.mode !== prevState.mode) {
             this.setState({
                 player: 'Player 1',
                 field: [[], [], []],
@@ -120,11 +122,11 @@ class Field extends Component {
                 value: currentValue,
             })
 
-            if (!audio) {
+            if (audio) {
                 this.soundClick();
             }
             
-            this.gameOver(field, !audio, player);
+            this.gameOver(field, audio, player);
         }
     }
 
