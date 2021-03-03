@@ -7,3 +7,9 @@ td {
     background-color: #7373D9;
     color: #fff;
 }
+
+td:hover {
+    background-color: #dbd1d1;
+    opacity: .2;
+    cursor: pointer;
+}
