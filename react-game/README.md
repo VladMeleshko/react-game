@@ -1,1 +1,1 @@
-#The game starts automatically. There are 2 modes and the ability to change the champion.
+# The game starts automatically. There are 2 modes and the ability to change the champion.
