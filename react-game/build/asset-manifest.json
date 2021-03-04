@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.24c739be.chunk.css",
+    "main.js": "/static/js/main.b5035dd2.chunk.js",
+    "main.js.map": "/static/js/main.b5035dd2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3f588e69.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3f588e69.js.map",
+    "static/js/2.0f3f6cea.chunk.js": "/static/js/2.0f3f6cea.chunk.js",
+    "static/js/2.0f3f6cea.chunk.js.map": "/static/js/2.0f3f6cea.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.24c739be.chunk.css.map": "/static/css/main.24c739be.chunk.css.map",
+    "static/js/2.0f3f6cea.chunk.js.LICENSE.txt": "/static/js/2.0f3f6cea.chunk.js.LICENSE.txt",
+    "static/media/click.37b199d5.mp3": "/static/media/click.37b199d5.mp3",
+    "static/media/rs_school_js.ad178c0d.svg": "/static/media/rs_school_js.ad178c0d.svg",
+    "static/media/tie.0d5f1e37.mp3": "/static/media/tie.0d5f1e37.mp3",
+    "static/media/win.6dc2f4de.mp3": "/static/media/win.6dc2f4de.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3f588e69.js",
+    "static/js/2.0f3f6cea.chunk.js",
+    "static/css/main.24c739be.chunk.css",
+    "static/js/main.b5035dd2.chunk.js"
+  ]
+}
